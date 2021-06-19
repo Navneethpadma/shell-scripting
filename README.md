@@ -1,4 +1,6 @@
 # shell-scripting
+
+
 1. she-bang and comments
 2. variables
 
@@ -8,7 +10,7 @@
 4.functions
    
 
-5. Misc()
+5. Misc(Exit status redirectors and code)
 
 6.conditions 
    

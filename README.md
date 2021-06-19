@@ -4,7 +4,7 @@
 1. she-bang and comments
 2. variables
 
-3. Inputs
+3. Inputs(Read & special variable)
 
 
 4.functions

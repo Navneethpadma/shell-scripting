@@ -12,8 +12,7 @@
 
 5. Misc(Exit status redirectors and code)
 
-6.conditions 
-   
+6.conditions
 7.loops
    
 

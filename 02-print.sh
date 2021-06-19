@@ -3,7 +3,7 @@
  #printf
  #echo
 
- #printf needs a lot of syntaxes and echo avoids them , yet both does the same job
+ #printf needs a lot of syntaxes and also echo avoids them , yet both does the same job
 
  #so we use echo
 

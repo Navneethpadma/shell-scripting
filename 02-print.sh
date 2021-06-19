@@ -1,4 +1,4 @@
-#!/usr/bin bash
+#!/usr/bin/env bash
  #Two commands are wide;y used to print
  #printf
  #echo

@@ -8,3 +8,4 @@
  #so we use echo
 
  echo hello world
+ echo welcome to devops

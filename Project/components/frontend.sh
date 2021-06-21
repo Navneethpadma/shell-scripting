@@ -1,5 +1,12 @@
 #!/bin/bash
+
+echo -e"\e[1;35m [INFORMATION] Installing Nginx\e[0m"
 yum install nginx
+if [ $? -ne 0]; then
+  echo -e"\e[1;35m [Error] Failure Installing Nginx\e[0m"
+  exit 2
+fi
+
 systemctl enable nginx
 systemctl start nginx
 

@@ -2,4 +2,4 @@ catalogue:
  @echo Installing catalogue
 
 cart:
- @echo installing cart
+    @echo installing cart

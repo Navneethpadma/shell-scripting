@@ -4,5 +4,5 @@ catalogue:  ## install catalogue project for roboshop project
     @sh components/catalouge.sh
 
 cart:   ## install cart project for roboshop project
-    @sh components/catalouge.sh
+    @sh components/cart.sh
 

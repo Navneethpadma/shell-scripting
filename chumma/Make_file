@@ -1,5 +1,0 @@
-catalogue:
- @echo Installing catalogue
-
-cart:
-    @echo installing cart

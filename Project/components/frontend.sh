@@ -7,4 +7,3 @@ fi
 
 
 
-yum install nginx -y

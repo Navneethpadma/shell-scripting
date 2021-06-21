@@ -1,4 +1,4 @@
-catalogue:  ## install catalogue project for roboshop project
+catalogue:
     @echo installing catalogue
-cart:   ## install cart project for roboshop project
+cart:
     @echo installing cart

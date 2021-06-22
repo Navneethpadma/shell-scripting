@@ -9,7 +9,7 @@ if [ $? -ne 0 ]; then
   echo -e "\e[1;35m [Error] Failure Installing Nginx\e[0m"
   exit 2
 else
-  echo -e "\e[1;29m [succ] Nginx installation is sucessful\e[0m"
+  echo -e "\e[1;40m [succ] Nginx installation is sucessful\e[0m"
 fi
 echo "------------------------------------------------------------"
 echo "------------------------------------------------------------"

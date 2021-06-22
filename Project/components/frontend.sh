@@ -7,9 +7,7 @@ STAT $? "Nginx Installation"
 
 
 
-echo "------------------------------------------------------------"
-echo -e "\e[1;35m [INFORMATION] Download frontend component\e[0m"
-echo "------------------------------------------------------------"
+print  "Download frontend component"
 
 
 
@@ -20,7 +18,7 @@ if [ $? -ne 0 ]; then
   exit 2
 else
   echo "------------------------------------------------------------"
-  echo -e "\e[1;37m [succ] Download successful is successful\e[0m"
+  echo -e "\e[1;37m [succ] Download is successful\e[0m"
   echo "------------------------------------------------------------"
   echo "------------------------------------------------------------"
 fi

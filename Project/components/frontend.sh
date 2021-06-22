@@ -1,19 +1,9 @@
 #!/bin/bash
-
-echo "------------------------------------------------------------"
-echo -e "\e[1;35m [INFORMATION] Installing Nginx\e[0m"
-echo "------------------------------------------------------------"
-
+source components/common.sh
+print "Installing Nginx"
 yum install nginx -y
-if [ $? -ne 0 ]; then
-  echo "------------------------------------------------------------"
-  echo -e "\e[1;35m [Error] Failure Installing Nginx\e[0m"
-  exit 2
-else
-  echo "------------------------------------------------------------"
-  echo -e "\e[1;37m [succ] Nginx installation is successful\e[0m"
-fi
-echo "------------------------------------------------------------"
+STAT $? "Nginx Installation"
+
 
 
 

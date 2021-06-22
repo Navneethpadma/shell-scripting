@@ -11,13 +11,10 @@ if [ $? -ne 0 ]; then
   exit 2
 else
   echo "------------------------------------------------------------"
-  echo -e "\e[1;40m [succ] Nginx installation is successful\e[0m"
+  echo -e "\e[1;37m [succ] Nginx installation is successful\e[0m"
 fi
+echo "------------------------------------------------------------"
 
-echo "------------------------------------------------------------"
-echo "------------------------------------------------------------"
-echo -e "\e[1;35m [INFORMATION] Installing Nginx\e[0m"
-echo "------------------------------------------------------------"
 
 
 echo "------------------------------------------------------------"
@@ -33,7 +30,7 @@ if [ $? -ne 0 ]; then
   exit 2
 else
   echo "------------------------------------------------------------"
-  echo -e "\e[1;40m [succ] Download successful is successful\e[0m"
+  echo -e "\e[1;37m [succ] Download successful is successful\e[0m"
 fi
 
 exit

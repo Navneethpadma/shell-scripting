@@ -15,16 +15,25 @@ curl -s -L -o /tmp/frontend.zip "https://github.com/roboshop-devops-project/fron
 STAT $? "Download of Frontend files"
 
 
-exit
+print "Extract frontend"
 
 cd /usr/share/nginx/html
 rm -rf *
 unzip /tmp/frontend.zip
+
+STAT $? "Extracting frontend"
+
 mv frontend-main/* .
 mv static/* .
 rm -rf frontend-master README.md
+
+print "Update nginx config"
 mv localhost.conf /etc/nginx/default.d/roboshop.conf
-systemctl restart nginx
+STAT $? "Updating Nginx config"
+
+print "Start Nginx service"
+
 
 systemctl enable nginx
-systemctl start nginx
+systemctl restart nginx
+STAT $? "Restarting Nginx service"

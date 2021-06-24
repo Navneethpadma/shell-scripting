@@ -7,7 +7,7 @@ exit 1
 fi
 
 set-hostname ${component}
-disable auto-shut-down
+disable-auto-shutdown
 
 print()
 {

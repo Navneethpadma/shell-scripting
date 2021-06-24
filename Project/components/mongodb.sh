@@ -13,17 +13,31 @@ STAT $? "Mongodb installation is successful"
 print "Installing mongodb files"
 yum install -y mongodb-org
 STAT $? "Mongodb installation is successful"
-#print "Starting Mongodb"
-#systemctl enable mongod
-#systemctl start mongod
-#STAT $? "Mongodb enabling is successful"
 
-#/etc/mongod.conf
-# systemctl restart mongod
-# curl -s -L -o /tmp/mongodb.zip "https://github.com/roboshop-devops-project/mongodb/archive/main.zip"
+print "Updating mongodb.conf"
 
-# cd /tmp
-# unzip mongodb.zip
-# cd mongodb-main
-# mongo < catalogue.js
-# mongo < users.js
+sed -i -e 's/127.0.0.1/0.0.0.0/' /etc/mongod.conf
+STAT $? "Conf is successfully updated"
+
+print "Updating mongodb.conf"
+systemctl enable mongod
+systemctl restart mongod
+STAT $? "mogodb restarted successful"
+
+print "Download mongodb schema"
+curl -s -L -o /tmp/mongodb.zip "https://github.com/roboshop-devops-project/mongodb/archive/main.zip"
+STAT $? "mogodb schema download successful"
+
+print "extrasct mongodb schema"
+cd /tmp
+unzip mongodb.zip
+STAT $? "mogodb schema extract successful"
+
+
+print "load schema"
+cd mongodb-main
+mongo < catalogue.js && mongo < users.js
+STAT $? "mogodb schema load successful"
+
+
+

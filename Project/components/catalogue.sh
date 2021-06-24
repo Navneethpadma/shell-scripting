@@ -1,6 +1,6 @@
 #!/bin/bash
 source components/common.sh
-component=catalogue
+
 
 print "Installing Node J.s"
 yum install nodejs make gcc-c++ -y

@@ -6,7 +6,7 @@ if [ "${USER_ID}" -ne 0 ]; then
 exit 1
 fi
 
-set-hostname{component}
+set-hostname ${component}
 disable auto-shut-down
 
 print()

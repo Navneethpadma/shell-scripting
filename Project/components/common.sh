@@ -90,5 +90,5 @@ NodeJS_SETUP(){
   Downloading_component_from_git
   Download_components_catalogue
   INSTALL_NIDEJS_DEPENDENCIES
-  setup_service()
+  setup_service
 }

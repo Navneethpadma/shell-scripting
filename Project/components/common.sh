@@ -41,7 +41,7 @@ Roboshop_username_add()
 {
   id roboshop
   if [ $? -eq 0 ]; then
-    PRINT "USER ALREADY THERE"
+    print "USER ALREADY THERE"
     return
   fi
   print "Adding User"

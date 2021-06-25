@@ -28,5 +28,19 @@ else
   echo -e "\e[1;37m [succ] $2 is successful\e[0m"
   echo "------------------------------------------------------------"
 fi
-
+ }
+NodeJS_Install()
+{
+  print "Installing Node J.s"
+  yum install nodejs make gcc-c++ -y
+  STAT $? "Node JS Installation successful"
 }
+
+Roboshop_username_add()
+{
+  print "Adding User"
+  useradd roboshop
+  STAT $? "successfully added user"
+}
+
+

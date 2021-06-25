@@ -3,13 +3,11 @@ source components/common.sh
 
 component=catalogue
 
-print "Installing Node J.s"
-yum install nodejs make gcc-c++ -y
-STAT $? "Node JS Installation successful"
+NodeJS_Install
 
-print "Adding User"
-useradd roboshop
-STAT $? "successfully added user"
+Roboshop_username_add
+
+
 
 #print "Roboshop login"
 #su -robohop

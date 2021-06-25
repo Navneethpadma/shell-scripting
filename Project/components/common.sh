@@ -6,7 +6,7 @@ if [ "${USER_ID}" -ne 0 ]; then
 exit 1
 fi
 
-set-hostname ${component}
+set-hostname ${COMPONENT}
 disable-auto-shutdown
 
 print()
@@ -49,4 +49,26 @@ Roboshop_username_add()
   STAT $? "successfully added user"
 }
 
+Downloading_component_from_git()
+{
+  print "Download ${COMPONENT} zip files"
+  curl -s -L -o /tmp/${COMPONENT} .zip "https://github.com/roboshop-devops-project/catalogue/archive/main.zip"
+  STAT $? "Successful downloading zip files"
+}
 
+Download_components_catalogue(){
+  print "Setting up ${COMPONENT}  files"
+  cd /home/roboshop
+  rm -rf ${COMPONENT} && unzip /tmp/${COMPONENT}.zip && mv ${COMPONENT}-main ${COMPONENT}
+  STAT $? "Extraction successful"
+}
+
+INSTALL_NIDEJS_DEPENDENCIES()
+
+{
+  print "Node js dependencies"
+  cd /home/roboshop/catalogue
+  npm install --unsafe-perm
+  STAT $? "downloading dependencies successful"
+
+}

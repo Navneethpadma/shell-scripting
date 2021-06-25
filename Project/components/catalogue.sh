@@ -1,11 +1,13 @@
 #!/bin/bash
 source components/common.sh
 
-component=catalogue
+COMPONENT=catalogue
 
 NodeJS_Install
-
 Roboshop_username_add
+Downloading_component_from_git
+Download_components_catalogue
+INSTALL_NIDEJS_DEPENDENCIES
 
 
 
@@ -13,14 +15,9 @@ Roboshop_username_add
 #su -robohop
 #STAT $? "I am a roboshop user now"
 
-print "Download catalogue zip files"
-curl -s -L -o /tmp/catalogue.zip "https://github.com/roboshop-devops-project/catalogue/archive/main.zip"
-STAT $? "Successful downloading zip files"
 
-print "Setting us Catalogue files"
-cd /home/roboshop
-rm -rf catalogue && unzip /tmp/catalogue.zip && mv catalogue-main catalogue
-STAT $? "Extraction successful"
+
+
 
 print "Node js dependencies"
 cd /home/roboshop/catalogue

@@ -38,6 +38,9 @@ NodeJS_Install()
 
 Roboshop_username_add()
 {
+  id roboshop
+  if [ $? -eq 0 ]; then
+    PRINT "USER ALREADY THERE "
   print "Adding User"
   useradd roboshop
   STAT $? "successfully added user"

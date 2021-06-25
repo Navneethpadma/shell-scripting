@@ -16,11 +16,10 @@ STATE=$(aws ec2 describe-instances     --filters Name=tag:Name,Values=${COMPONEN
     echo "Instance ${COMPONENT} already exists"
   fi
 
+IPADDRESS=$(aws ec2 describe-instances     --filters Name=tag:Name,Values=${COMPONENT}   | jq .Reservations[].Instances[].PrivateIpAddress | grep -v null |xargs)
 
-#IPADDRESS=$(aws ec2 describe-instances     --filters Name=tag:Name,Values=${COMPONENT}   | jq .Reservations[].Instances[].PrivateIpAddress | grep -v null |xargs)
-
-#sed -e "s/COMPONENT/${COMPONENT}/" -e "s/IPADDRESS/${IPADDRESS}/" record.json >/tmp/record.json
-#aws route53 change-resource-record-sets --hosted-zone-id Z0449177GO3AQK4VZZ1H --change-batch file:///tmp/record.json
+sed -e "s/COMPONENT/${COMPONENT}/" -e "s/IPADDRESS/${IPADDRESS}/" record.json >/tmp/record.json
+aws route53 change-resource-record-sets --hosted-zone-id Z10472123M0B8WLNUQSQP --change-batch file:///tmp/record.json
 
 
 #aws ec2 run-instances --launch-template LaunchTemplateId=${LID},Version=${LVER} --tag-specifications "ResourceType=instance, Tags=[{Key=Name,Value=${COMPONENT}}]" | jq

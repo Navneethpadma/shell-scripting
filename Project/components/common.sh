@@ -37,6 +37,16 @@ NodeJS_Install()
   STAT $? "Node JS Installation successful"
 }
 
-
+Roboshop_username_add()
+{
+  id roboshop
+  if [ $? -eq 0 ]; then
+    PRINT "USER ALREADY THERE"
+    return
+  fi
+  print "Adding User"
+  useradd roboshop
+  STAT $? "successfully added user"
+}
 
 

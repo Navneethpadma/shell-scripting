@@ -29,6 +29,7 @@ else
   echo "------------------------------------------------------------"
 fi
  }
+
 NodeJS_Install()
 {
   print "Installing Node J.s"
@@ -40,7 +41,7 @@ Roboshop_username_add()
 {
   id roboshop
   if [ $? -eq 0 ]; then
-  PRINT "USER ALREADY THERE "
+  PRINT "USER ALREADY THERE"
   print "Adding User"
   useradd roboshop
   STAT $? "successfully added user"

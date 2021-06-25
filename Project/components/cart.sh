@@ -1,2 +1,6 @@
 #!/bin/bash
-echo installing cart
+source components/common.sh
+
+COMPONENT=catalogue
+
+NodeJS_SETUP

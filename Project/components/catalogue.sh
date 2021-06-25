@@ -3,26 +3,13 @@ source components/common.sh
 
 COMPONENT=catalogue
 
-NodeJS_Install
-Roboshop_username_add
-Downloading_component_from_git
-Download_components_catalogue
-INSTALL_NIDEJS_DEPENDENCIES
+NodeJS_SETUP
 
 
 
 #print "Roboshop login"
 #su -robohop
 #STAT $? "I am a roboshop user now"
-
-
-
-
-
-print "Node js dependencies"
-cd /home/roboshop/catalogue
-npm install
-STAT $? "downloading dependencies successful"
 
 
 

@@ -72,3 +72,11 @@ INSTALL_NIDEJS_DEPENDENCIES()
   STAT $? "downloading dependencies successful"
 
 }
+
+NodeJS_SETUP(){
+  NodeJS_Install
+  Roboshop_username_add
+  Downloading_component_from_git
+  Download_components_catalogue
+  INSTALL_NIDEJS_DEPENDENCIES
+}

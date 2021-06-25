@@ -6,8 +6,10 @@ if [ "${USER_ID}" -ne 0 ]; then
 exit 1
 fi
 
-set-hostname ${COMPONENT}
-disable-auto-shutdown
+os_prereq(){
+  set-hostname ${COMPONENT}
+  disable-auto-shutdown
+}
 
 print()
 {
@@ -73,10 +75,20 @@ INSTALL_NIDEJS_DEPENDENCIES()
 
 }
 
+setup_service() {
+  PRINT "Setup SystemD Service for ${COMPONENT}"
+  mv /home/roboshop/$(COMPONENT)/systemd.service /etc/systemd/system/catalogue.service
+  sed -i  -e 's/MONGO_DNSNAME/mongodb.thenavops.com/' /etc/systemd/system/${COMPONENT}.service
+  systemctl daemon-reload && systemctl start catalogue && systemctl enable catalogue
+  STAT $? "Starting ${COMPONENT} Service"
+
+}
+
 NodeJS_SETUP(){
   NodeJS_Install
   Roboshop_username_add
   Downloading_component_from_git
   Download_components_catalogue
   INSTALL_NIDEJS_DEPENDENCIES
+  setup_service()
 }

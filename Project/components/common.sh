@@ -62,6 +62,7 @@ Download_components_catalogue(){
   print "Setting up ${COMPONENT}  files"
   cd /home/roboshop
   rm -rf ${COMPONENT} && unzip /tmp/${COMPONENT}.zip && mv ${COMPONENT}-main ${COMPONENT}
+
   STAT $? "Extraction successful"
 }
 

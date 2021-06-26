@@ -54,7 +54,7 @@ Roboshop_username_add()
 Downloading_component_from_git()
 {
   print "Download ${COMPONENT} zip files"
-  curl -s -L -o /tmp/${COMPONENT} .zip "https://github.com/roboshop-devops-project/${COMPONENT}/archive/main.zip"
+  curl -s -L -o /tmp/${COMPONENT}.zip "https://github.com/roboshop-devops-project/${COMPONENT}/archive/main.zip"
   STAT $? "Successful downloading zip files"
 }
 

@@ -58,11 +58,11 @@ Downloading_component_from_git()
   STAT $? "Successful downloading zip files"
 }
 
-Download_components_catalogue(){
+Download_components_catalogue()
+{
   print "Setting up ${COMPONENT}  files"
   cd /home/roboshop
   rm -rf ${COMPONENT} && unzip /tmp/${COMPONENT}.zip && mv ${COMPONENT}-main ${COMPONENT}
-
   STAT $? "Extraction successful"
 }
 
@@ -79,13 +79,14 @@ INSTALL_NIDEJS_DEPENDENCIES()
 setup_service() {
   PRINT "Setup SystemD Service for ${COMPONENT}"
   mv /home/roboshop/$(COMPONENT)/systemd.service /etc/systemd/system/catalogue.service
-  sed -i  -e 's/MONGO_DNSNAME/mongodb.thenavops.com/' /etc/systemd/system/${COMPONENT}.service
+  sed -i  -e 's/MONGO_DNSNAME/mongodb.thenavops.com/'/etc/systemd/system/${COMPONENT}.service
   systemctl daemon-reload && systemctl start catalogue && systemctl enable catalogue
   STAT $? "Starting ${COMPONENT} Service"
 
 }
 
-NodeJS_SETUP(){
+NodeJS_SETUP()
+{
   NodeJS_Install
   Roboshop_username_add
   Downloading_component_from_git

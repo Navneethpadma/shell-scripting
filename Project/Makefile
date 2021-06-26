@@ -5,7 +5,7 @@ catalogue:	common ## Install catalogue component for Roboshop project
 	@sh components/catalogue.sh
 
 common: ## Install common component for Roboshop project
-	@sh components/common.sh
+	@sh -x components/common.sh
 
 cart:	common  ##Install cart component for Roboshop project
 	@sh components/cart.sh

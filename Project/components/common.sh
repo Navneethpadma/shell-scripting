@@ -76,9 +76,9 @@ INSTALL_NODEJS_DEPENDENCIES()
 }
 
 setup_service() {
-  PRINT "Setup SystemD Service for ${COMPONENT}"
+  print "Setup SystemD Service for ${COMPONENT}"
   mv /home/roboshop/${COMPONENT}/systemd.service /etc/systemd/system/${COMPONENT}.service
-  sed -i  -e 's/MONGO_DNSNAME/mongodb.thenavops.com/'/etc/systemd/system/${COMPONENT}.service
+  sed -i  -e 's/MONGO_DNSNAME/mongodb.thenavops.com/' /etc/systemd/system/${COMPONENT}.service
   systemctl daemon-reload && systemctl start catalogue && systemctl enable catalogue
   STAT $? "Starting ${COMPONENT} Service"
 

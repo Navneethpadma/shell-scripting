@@ -1,18 +1,13 @@
 #!/bin/bash
 source components/common.sh
 component=frontend
+os_prereq
 
 print "Installing Nginx"
 yum install nginx -y
 STAT $? "Nginx Installation"
 
-
-
-
 print  "Download frontend component"
-
-
-
 curl -s -L -o /tmp/frontend.zip "https://github.com/roboshop-devops-project/frontend/archive/main.zip"
 STAT $? "Download of Frontend files"
 

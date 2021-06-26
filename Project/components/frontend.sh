@@ -1,6 +1,6 @@
 #!/bin/bash
 source components/common.sh
-component=frontend
+COMPONENT=frontend
 os_prereq
 
 print "Installing Nginx"

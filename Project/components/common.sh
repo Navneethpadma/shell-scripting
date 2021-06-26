@@ -54,7 +54,7 @@ Roboshop_username_add()
 Downloading_component_from_git()
 {
   print "Download ${COMPONENT} zip files"
-  curl -s -L -o /tmp/${COMPONENT} .zip "https://github.com/roboshop-devops-project/catalogue/archive/main.zip"
+  curl -s -L -o /tmp/${COMPONENT} .zip "https://github.com/roboshop-devops-project/${COMPONENT}/archive/main.zip"
   STAT $? "Successful downloading zip files"
 }
 
@@ -66,8 +66,7 @@ Download_components_catalogue()
   STAT $? "Extraction successful"
 }
 
-INSTALL_NIDEJS_DEPENDENCIES()
-
+INSTALL_NODEJS_DEPENDENCIES()
 {
   print "Node js dependencies"
   cd /home/roboshop/catalogue
@@ -91,6 +90,6 @@ NodeJS_SETUP()
   Roboshop_username_add
   Downloading_component_from_git
   Download_components_catalogue
-  INSTALL_NIDEJS_DEPENDENCIES
+  INSTALL_NODEJS_DEPENDENCIES
   setup_service
 }

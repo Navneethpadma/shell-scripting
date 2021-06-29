@@ -14,7 +14,7 @@ yum install redis -y
 STAT $? " Installing Redis"
 
 print "Update redis configuration file"
-sed -i -e '/^bind 0.0.0.0' /etc/redis.conf
+sed -i -e '/^bind/ c bind 0.0.0.0' /etc/redis.conf
 STAT $? "Updating configuration files of redis"
 
 print "Start Redis service"

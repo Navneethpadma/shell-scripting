@@ -5,7 +5,7 @@ os_prereq
 
 print "Set up redis repo"
 if [ ! -f /etc/yum.repos.d/remi.repo ]; then
-yum install http://rpms.remirepo.net/enterprise/remi-release-7.rpm -y
+  yum install http://rpms.remirepo.net/enterprise/remi-release-7.rpm -y
 fi
 STAT $? "Setting up redis repo"
 

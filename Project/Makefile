@@ -15,3 +15,6 @@ frontend:	common     ##Install frontend component for Roboshop project
 
 mongodb: 	common     ##Install Mongodb component for Roboshop project
 	@sh components/mongodb.sh
+
+redis: 	common     ##Install redis component for Roboshop project
+	@sh components/redis.sh

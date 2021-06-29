@@ -1,7 +1,7 @@
- #!/bin/bash
+#!/bin/bash
 source components/common.sh
 component=mongodb
-
+os_prereq
 print "setup mongodb repositories"
 echo '[mongodb-org-4.2]
 name=MongoDB Repository

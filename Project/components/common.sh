@@ -22,7 +22,7 @@ echo "------------------------------------------------------------"
 STAT() {
 if [ $1 -ne 0 ]; then
   echo "------------------------------------------------------------"
-  echo -e "\e[1;35m [Error] Failure $2\e[0m"
+  echo -e "\e[1;31m [Error] Failure $2\e[0m"
   echo "------------------------------------------------------------"
   exit 2
 else
@@ -58,7 +58,7 @@ Downloading_component_from_git()
   STAT $? "Successful downloading zip files"
 }
 
-Download_components_catalogue()
+Extraction_components()
 {
   print "Setting up ${COMPONENT}  files"
   cd /home/roboshop
@@ -69,7 +69,7 @@ Download_components_catalogue()
 INSTALL_NODEJS_DEPENDENCIES()
 {
   print "Node js dependencies"
-  cd /home/roboshop/catalogue
+  cd /home/roboshop/${COMPONENT}
   npm install --unsafe-perm
   STAT $? "downloading dependencies successful"
 

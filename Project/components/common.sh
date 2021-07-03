@@ -91,7 +91,11 @@ setup_service() {
           -e 's/REDIS_ENDPOINT/redis.thenavops.com/' \
           -e 's/CATALOGUE_ENDPOINT/catalogue.thenavops.com/' \
           -e 's/DBHOST/mysql.thenavops.com/'  \
-          -e 's/CARTENDPOINT/cart.thenavops.com/' /etc/systemd/system/${COMPONENT}.service
+          -e 's/CARTENDPOINT/cart.thenavops.com/' \
+          -e "s/CARTHOST/cart.devopsb55.tk/" \
+          -e "s/USERHOST/user.devopsb55.tk/" \
+          -e "s/AMQPHOST/rabbitmq.devopsb55.tk/" \
+          /etc/systemd/system/${COMPONENT}.service
   systemctl daemon-reload && systemctl restart ${COMPONENT} && systemctl enable ${COMPONENT}
   STAT $? "Starting ${COMPONENT} Service"
 

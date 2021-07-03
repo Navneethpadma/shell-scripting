@@ -9,7 +9,7 @@ print "Install Maven"
 yum install maven -y
 STAT $? "Installing Maven"
 
-RoboShop_App_User_Add
+Roboshop_username_add
 Downloading_component_from_git
 Extraction_components
 

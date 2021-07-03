@@ -66,6 +66,13 @@ Extraction_components()
   STAT $? "Extraction successful"
 }
 
+Extract_Component_to_tmp() {
+  print "Extract ${COMPONENT}"
+  cd /tmp
+  rm -rf ${COMPONENT} && unzip /tmp/${COMPONENT}.zip
+  STAT $? "Extracting ${COMPONENT}"
+}
+
 INSTALL_NODEJS_DEPENDENCIES()
 {
   print "Node js dependencies"

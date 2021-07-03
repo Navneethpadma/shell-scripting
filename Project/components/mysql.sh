@@ -36,6 +36,15 @@ else
   PRINT "MySQL Password reset is not required"
 fi
 
+Downloading_component_from_git()
+
+Extract_Component_to_tmp()
+
+PRINT "Load Shipping Service Schema"
+cd /tmp/mysql-main
+mysql -u root -pRoboShop@123 <shipping.sql
+STAT $? "Loading Schema"
+
 #Next, We need to change the default root password in order to start using the database service.
 #mysql_secure_installation
 

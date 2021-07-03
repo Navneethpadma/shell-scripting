@@ -21,3 +21,6 @@ redis: 	common     ##Install redis component for Roboshop project
 
 user:	common  ##Install user component for Roboshop project
 	@sh components/user.sh
+
+mysql:	common  ##Install user component for Roboshop project
+	@sh components/mysql.sh

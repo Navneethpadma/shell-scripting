@@ -40,7 +40,7 @@ Downloading_component_from_git()
 
 Extract_Component_to_tmp()
 
-PRINT "Load Shipping Service Schema"
+print "Load Shipping Service Schema"
 cd /tmp/mysql-main
 mysql -u root -pRoboShop@123 <shipping.sql
 STAT $? "Loading Schema"

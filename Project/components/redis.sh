@@ -1,6 +1,6 @@
 #!/bin/bash
 source components/common.sh
-component=mongodb
+COMPONENT=mongodb
 os_prereq
 
 print "Set up redis repo"

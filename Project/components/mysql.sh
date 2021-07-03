@@ -1,6 +1,6 @@
 #!/bin/bash
 source components/common.sh
-component=mysql
+COMPONENT=mysql
 os_prereq
 
 print "Setting up Mysql repo"

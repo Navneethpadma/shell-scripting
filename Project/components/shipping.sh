@@ -10,12 +10,12 @@ yum install maven -y
 STAT $? "Installing Maven"
 
 RoboShop_App_User_Add
-Download_Component_From_GitHub
-Extract_Component
+Downloading_component_from_git
+Extraction_components
 
 print "Compile Shipping Code"
 cd /home/roboshop/shipping
 mvn clean package && mv target/shipping-1.0.jar shipping.jar
 STAT $? "Compiling Shipping Code"
 
-Setup_Service
+setup_service

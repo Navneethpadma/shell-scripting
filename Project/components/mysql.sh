@@ -36,9 +36,9 @@ else
   print "MySQL Password reset is not required"
 fi
 
-Downloading_component_from_git()
+Downloading_component_from_git
 
-Extract_Component_to_tmp()
+Extract_Component_to_tmp
 
 print "Load Shipping Service Schema"
 cd /tmp/mysql-main

@@ -33,7 +33,7 @@ uninstall plugin validate_password;" >/tmp/sql
   mysql --connect-expired-password -u root -p"${DEFAULT_PASSWORD}" </tmp/sql
   STAT $? "Changing MySQL Default Password"
 else
-  PRINT "MySQL Password reset is not required"
+  print "MySQL Password reset is not required"
 fi
 
 Downloading_component_from_git()

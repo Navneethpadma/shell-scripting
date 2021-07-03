@@ -5,7 +5,7 @@ COMPONENT=shipping
 
 OS_Prereqs
 
-PRINT "Install Maven"
+print "Install Maven"
 yum install maven -y
 STAT $? "Installing Maven"
 
@@ -13,7 +13,7 @@ RoboShop_App_User_Add
 Download_Component_From_GitHub
 Extract_Component
 
-PRINT "Compile Shipping Code"
+print "Compile Shipping Code"
 cd /home/roboshop/shipping
 mvn clean package && mv target/shipping-1.0.jar shipping.jar
 STAT $? "Compiling Shipping Code"

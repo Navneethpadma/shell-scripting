@@ -2,7 +2,7 @@
   hosts: all
   tasks:
     -name: Print Hello
-     debug:
+    debug:
        msg: Hello World
 
 
